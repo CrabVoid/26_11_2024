@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="weight">Svars</label>
+    <input type="number" id="weight" />
+    <br />
+    <label for="height">Augums</label>
+    <input type="number" id="height" />
+    <br />
+    <button type="submit" id="calcBtn">Rēķināt</button>
+    <br />
+    <p id="output"></p>
+
+    <script>
+      let weight = document.getElementById("weight");
+      let height = document.getElementById("height");
+      let btn = document.getElementById("calcBtn");
+      let output = document.getElementById("output");
+
+      function calcBmi(height, weight) {
+        return weight / (height * height);
+      }
+
+      btn.addEventListener("click", inputProccesing);
+
+      function inputProccesing() {
+        heightValue = height.value;
+        weightValue = weight.value;
+        let result = calcBmi(heightValue, weightValue);
+        output.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

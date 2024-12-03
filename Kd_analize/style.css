@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+
+form {
+    margin: auto;
+    width: 300px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+}

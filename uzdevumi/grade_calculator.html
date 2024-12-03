@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Grade Calculator</h1>
+      <br />
+      
+      <label for="name">Vārds</lable>
+      <br />
+      <input type="text" id="name" />
+      <br />
+      <label for="punkti">Iegūtie punkti</lable>
+      <br />
+      <input type="number" id="punkti" />
+      <br />
+      <label for="maxpunkti">max punkti</lable>
+      <br />
+      <input type="number" id="maxpunkti" />
+      <br />
+      <select id="vertejumi">
+        <option id="proc">Procentuālā vērtība (0-100)</option>
+        <option id="burt">Burtu vērtējums (A, B, C utt.)</option>
+      </select>
+      <br />
+      <button type="submit" id="calcbtn">Aprēķināt vērtējumu</button>
+      <br />
+      <p id="result"></p>
+    </div>
+    <script>
+      let name = document.getElementById("name");
+      let punkti = document.getElementById("punkti");
+      let maxpunkti = document.getElementById("maxpunkti");
+      let btn = document.getElementById("calcbtn");
+      let output = document.getElementById("result");
+      btn.addEventListener("click", processingInput);
+
+      function grade(punkti, maxpunkti) {
+        return (punkti / maxpunkti) * 100;
+      }
+
+      function processingInput() {
+        punktiValue = punkti.value;
+        maxpunktiValue = maxpunkti.value;
+        let result = grade(punktiValue, maxpunktiValue);
+        output.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
